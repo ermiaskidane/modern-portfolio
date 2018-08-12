@@ -77,6 +77,7 @@ main{
 .text-secondary{
   color: $secondary-color;
 }
+//########### about ##############//
 
 .about-info{
   display: grid;
@@ -139,4 +140,48 @@ main{
   height: 60px;
 }
 
-@import  'mobile';  // this will run after the intial code help on spped up the code and optimazation
+// Work/projects
+.projects{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+
+  img{
+    width: 100%;
+    border: 3px solid #fff;
+
+    &:hover{
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+// BUTTON STYLE
+
+.btn{
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover{
+    background-color: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.btn-light{
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+}
+
+.btn-dark{
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+@import  'mobile';  // this will run after the intial code help on speed up the code and optimazation
